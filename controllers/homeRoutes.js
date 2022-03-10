@@ -1,21 +1,28 @@
 const router = require('express').Router();
 const { User } = require('../models');
+const axios = require('axios').default;
 const withAuth = require('../utils/auth');
 
-// Prevent non logged in users from viewing the homepage
-router.get('/', withAuth, async (req, res) => {
+
+
+
+router.get('/', async (req, res) => {
   try {
-    const userData = await User.findAll({
-      attributes: { exclude: ['password'] },
-      order: [['name', 'ASC']],
-    });
-
-    const users = userData.map((project) => project.get({ plain: true }));
-
-    res.render('homepage', {
-      users,
-      // Pass the logged in flag to the template
-      logged_in: req.session.logged_in,
+    const allGameData = {
+      method: 'GET',
+      url: 'https://free-to-play-games-database.p.rapidapi.com/api/games',
+      headers: {
+        'x-rapidapi-host': 'free-to-play-games-database.p.rapidapi.com',
+        'x-rapidapi-key': '1a3958a999msh626d8d771ef20b0p1e89b7jsn52537a78b46c'
+      }
+    };
+    axios.request(allGameData).then(function (response) {
+      console.log(response.data);
+      res.render('homepage', {
+        games: response.data
+      });
+    }).catch(function (error) {
+      console.error(error);
     });
   } catch (err) {
     res.status(500).json(err);
@@ -23,13 +30,13 @@ router.get('/', withAuth, async (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-  // If a session exists, redirect the request to the homepage
-  if (req.session.logged_in) {
+  if (req.session.loggedIn) {
     res.redirect('/');
     return;
   }
 
   res.render('login');
 });
+
 
 module.exports = router;
