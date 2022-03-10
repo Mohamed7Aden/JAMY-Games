@@ -4,6 +4,11 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 const helpers = require('./utils/helpers');
+const passport = require('passport');
+// const local = require('./strategies/local')
+
+// importing auth route
+const authRoute = require('./controllers/auth');
 
 const sequelize = require('./config/connection');
 
@@ -26,6 +31,10 @@ const sess = {
   })
 };
 
+// initializing passport so it works
+app.use(passport.initialize());
+app.use(passport.session());
+
 // Add express-session and store as Express.js middleware
 app.use(session(sess));
 
@@ -35,6 +44,8 @@ app.set('view engine', 'handlebars');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
+// registering auth route 
+app.use('/auth', authRoute)
 
 app.use(routes);
 
