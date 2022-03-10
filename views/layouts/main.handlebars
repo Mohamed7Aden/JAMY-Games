@@ -16,10 +16,10 @@
     <div class="nav-wrapper">
       <a href="#" class="brand-logo center">Logo</a>
       <ul id="nav-mobile" class="left hide-on-med-and-down">
-      <li><a href="#"><i class="material-icons">menu</i></a></li>
+      <li><a href="#" data-target="slide-out"class="sidenav-trigger"><i class="material-icons">menu</i></a></li>
       </ul>
       <ul id="nav-module" class="right hide-on-med-and-down">
-        <li><a href="#" data-target="sidenav"class="sidenav-trigger"><i class="material-icons">person_outline</i></a></li>
+        <li><a href="#"><i class="material-icons">person_outline</i></a></li>
         {{#if logged_in}}
         <li><button class="btn" id="logout">logout</button></li>
         {{else}}
@@ -43,7 +43,6 @@
     <li><a class="subheader">Subheader</a></li>
     <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
   </ul>
-  <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     <!-- Only display the logout button if the user is logged in -->
   </header>
     
