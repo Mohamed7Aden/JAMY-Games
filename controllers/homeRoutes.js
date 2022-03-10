@@ -1,7 +1,17 @@
 const router = require('express').Router();
+<<<<<<< HEAD
 const axios = require(`axios`).default;
 
 // Prevent non logged in users from viewing the homepage
+=======
+const { User } = require('../models');
+const axios = require('axios').default;
+const withAuth = require('../utils/auth');
+
+
+
+
+>>>>>>> 2b9d83a4dae8e8e1e8903600a9ff535bc901c6ec
 router.get('/', async (req, res) => {
   try {
     const allGameData = {
@@ -14,11 +24,19 @@ router.get('/', async (req, res) => {
     };
     axios.request(allGameData).then(function (response) {
       console.log(response.data);
+<<<<<<< HEAD
     }).catch(function (error) {
       console.error(error);
     });
 
     res.render('homepage', {
+=======
+      res.render('homepage', {
+        games: response.data
+      });
+    }).catch(function (error) {
+      console.error(error);
+>>>>>>> 2b9d83a4dae8e8e1e8903600a9ff535bc901c6ec
     });
   } catch (err) {
     res.status(500).json(err);
@@ -26,13 +44,13 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-  // If a session exists, redirect the request to the homepage
-  if (req.session.logged_in) {
+  if (req.session.loggedIn) {
     res.redirect('/');
     return;
   }
 
   res.render('login');
 });
+
 
 module.exports = router;
