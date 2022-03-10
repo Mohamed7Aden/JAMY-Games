@@ -31,12 +31,12 @@ const sess = {
   })
 };
 
+// Add express-session and store as Express.js middleware
+app.use(session(sess));
 // initializing passport so it works
 app.use(passport.initialize());
 app.use(passport.session());
 
-// Add express-session and store as Express.js middleware
-app.use(session(sess));
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
