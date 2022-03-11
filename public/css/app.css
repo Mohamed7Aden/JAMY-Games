@@ -2,12 +2,7 @@
 
 /* Variables */
 :root {
-  --main-color: #9348d1;
-  --blue: #0000ff;
   --blue-dark: #18293c;
-  --orange: #ffa500;
-  --green-yellow: #cddc39;
-  --pink-light: #efa2b4;
   --cyan-light: #aef1ee;
   --white: #ffffff;
   --white-alpha-40: rgba(255, 255, 255, 0.4);
@@ -40,7 +35,7 @@ body {
   line-height: 1.5;
   overflow-x: hidden;
   -webkit-tap-highlight-color: transparent;
-  padding: 35px 15px;
+  /* padding: 35px 15px; */
 }
 
 body.hide-scrolling {
@@ -71,6 +66,41 @@ header {
   text-align: center;
 }
 
+nav {
+  background-color: black;
+  border: 1px solid var(--white-alpha-40);
+  color: var(--blue-dark);
+  margin: 0;
+  padding: 0;
+}
+
+.sidenav {
+  padding-top: 10px;
+  background-color: black;
+  border: 1px solid var(--white-alpha-40);
+  text-align: center;
+}
+
+.sidenav .subheader {
+  color: white;
+}
+
+.list-item {
+  margin: 10px 0;
+  background-color: var(--white-alpha-25);
+  border: 1px solid var(--white-alpha-40);
+  border-radius: 5px;
+}
+
+.list-item:hover {
+  background-color: tan;
+}
+
+.divider {
+  background-color: black;
+  border: none;
+}
+
 .container {
   background-color: var(--white-alpha-25);
   border: 1px solid var(--white-alpha-40);
@@ -78,7 +108,7 @@ header {
   border-radius: 30px;
   backdrop-filter: var(--backdrop-filter-blur);
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto auto auto;
   justify-content: center;
   flex-wrap: wrap;
   padding: 20px;
