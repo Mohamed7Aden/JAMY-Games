@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="/css/jass.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@materializecss/materialize@1.1.0-alpha/dist/css/materialize.min.css">
+  <link rel="stylesheet" href="/css/app.css">
 </head>
 
 <body>
@@ -58,22 +59,22 @@
     {{{ body }}}
   </main>
   <footer>
-    <div>
+    <div class="footer-item">
       <h3>Abdirahman</h3>
       <a href="">Github</a>
       <a href="">LinkedIn</a>
     </div>
-    <div>
+    <div class="footer-item">
       <h3>Jacob</h3>
       <a href="">Github</a>
       <a href="">LinkedIn</a>
     </div>
-    <div>
+    <div class="footer-item">
       <h3>Mohammed</h3>
       <a href="">Github</a>
       <a href="">LinkedIn</a>
     </div>
-    <div>
+    <div class="footer-item">
       <h3>Yazid</h3>
       <a href="">Github</a>
       <a href="">LinkedIn</a>
@@ -82,6 +83,7 @@
  
 
   <!-- Only include the logout script if the user is logged in -->
+  <script src="/public/js/index.js"></script>
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}
