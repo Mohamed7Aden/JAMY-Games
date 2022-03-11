@@ -71,7 +71,17 @@ nav {
   border: 1px solid var(--white-alpha-40);
   color: var(--blue-dark);
   margin: 0;
-  padding: 0;
+  padding-right: 10px;
+}
+
+nav button {
+  border: 1px solid var(--white-alpha-40);
+  border-radius: 10px;
+  text-align: center;
+}
+
+nav button:hover {
+  background-color: tan;
 }
 
 .download_btn_link {
@@ -180,26 +190,72 @@ nav {
   margin: 20px 0;
 }
 
-footer {
-  background-color: var(--white-alpha-25);
+.footer {
+  background-color: black;
   border: 1px solid var(--white-alpha-40);
-  padding: 20px;
-  margin: 10px;
-  border-radius: 20px;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.footer-container {
+  width: 90%;
+  max-width: 1500px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-img-left {
+  width: 33%;
+  height: 600px;
+  background: url(../assets/battlefield.jpg);
+  border-radius: 8px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: left;
+}
+
+.footer-img-center {
+  background: url(../assets/New\ World.jpeg);
+  width: 33%;
+  min-height: 400px;
+  border-radius: 8px;
+  margin-left: -90px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+.footer-img-right {
+  background: url(../assets/mario.jpeg);
+  width: 33%;
+  min-height: 400px;
+  border-radius: 8px;
+  margin-left: -50px;
+  margin-bottom: -200px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.footer h3 {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.footer-item-wrapper {
+  text-align: center;
   display: flex;
   justify-content: space-evenly;
 }
 
 .footer-item {
-  width: 90%;
+  width: 20%;
   padding: 10px;
   margin: 10px;
   border-radius: 20px;
-  background-color: var(--white-alpha-25);
-  border: 1px solid var(--white-alpha-40);
+  /* background-color: var(--white-alpha-25);
+  border: 1px solid var(--white-alpha-40); */
   text-align: center;
-}
-
-.footer-item:hover {
-  background-color: tan;
 }
