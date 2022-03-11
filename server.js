@@ -5,7 +5,7 @@ const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 const helpers = require('./utils/helpers');
 const passport = require('passport');
-// const local = require('./strategies/local')
+const local = require('./strategies/local')
 
 // importing auth route
 const authRoute = require('./controllers/auth');
