@@ -1,6 +1,6 @@
 const LocalStrategy = require('passport-local');
 const passport = require('passport');
-const { User } = require('../models/User');
+const { User } = require('../models');
 
 
 // handles serialized user into a session(takes cookie and check to see which user it belongs to and take user and serialize it back into a session (this is how passport maintains a session)) 
@@ -8,7 +8,7 @@ passport.serializeUser((user, done) => {
     done(null, user.username);
 });
 // handles deserializing a user into a session
-passport.deserializeUser((user, done) => {
+passport.deserializeUser(async(user, done) => {
     try {
 
     const result = await User.findOne({ where: { username: user.username } });
