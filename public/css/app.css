@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/* Variables */
+:root {
+  --main-color: #9348d1;
+  --blue: #0000ff;
+  --blue-dark: #18293c;
+  --orange: #ffa500;
+  --green-yellow: #cddc39;
+  --pink-light: #efa2b4;
+  --cyan-light: #aef1ee;
+  --white: #ffffff;
+  --white-alpha-40: rgba(255, 255, 255, 0.4);
+  --white-alpha-25: rgba(255, 255, 255, 0.25);
+  --backdrop-filter-blur: blur(5px);
+}
+
+/* Global Settings */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  font-family: "Open Sans", sans-serif;
+}
+
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-color: tan;
+  background-attachment: fixed;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  color: var(--blue-dark);
+  line-height: 1.5;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+  padding: 35px 15px;
+}
+
+body.hide-scrolling {
+  overflow-y: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2 {
+  font-weight: 600;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500;
+}
+
+ul {
+  list-style: none;
+}
+
+header {
+  text-align: center;
+}
+
+.container {
+  background-color: var(--white-alpha-25);
+  border: 1px solid var(--white-alpha-40);
+  min-height: calc(100vh - 70px);
+  border-radius: 30px;
+  backdrop-filter: var(--backdrop-filter-blur);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 20px;
+  margin: 0 10px;
+}
+
+.game-item {
+  width: 90%;
+  padding: 10px;
+  margin: 10px;
+  background-color: var(--white-alpha-25);
+  border: 1px solid var(--white-alpha-40);
+  border-radius: 20px;
+  text-align: center;
+}
+
+.game-item:hover {
+  background-color: tan;
+}
+
+.game-item-thumbnail {
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.game-item-thumbnail img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.game-item h3 {
+  font-size: 20px;
+  text-transform: capitalize;
+  margin: 20px 0;
+}
+
+footer {
+  background-color: var(--white-alpha-25);
+  border: 1px solid var(--white-alpha-40);
+  padding: 20px;
+  margin: 10px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.footer-item {
+  width: 90%;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 20px;
+  background-color: var(--white-alpha-25);
+  border: 1px solid var(--white-alpha-40);
+  text-align: center;
+}
+
+.footer-item:hover {
+  background-color: tan;
+}

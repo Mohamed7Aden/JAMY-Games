@@ -5,13 +5,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TTTech Blog</title>
-  <link rel="stylesheet" href="/css/jass.css">
+  {{!-- <link rel="stylesheet" href="/css/jass.css"> --}}
+  <link rel="stylesheet" href="/css/app.css">
+  {{!-- link to materialize --}}
+  {{!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" integrity="sha512-UJfAaOlIRtdR+0P6C3KUoTDAxVTuy3lnSXLyLKlHYJlcSU8Juge/mjeaxDNMlw9LgeIotgz5FP8eUQPhX1q10A==" crossorigin="anonymous" referrerpolicy="no-referrer" /> --}}
 </head>
 
 <body>
   <header class="display-flex justify-space-between align-center p-2">
     <h1>
-      TTTech Blogs
+      Jamy Games
     </h1>
     <!-- Only display the logout button if the user is logged in -->
     {{#if logged_in}}
@@ -24,22 +27,22 @@
     {{{ body }}}
   </main>
   <footer>
-    <div>
+    <div class="footer-item">
       <h3>Abdirahman</h3>
       <a href="">Github</a>
       <a href="">LinkedIn</a>
     </div>
-    <div>
+    <div class="footer-item">
       <h3>Jacob</h3>
       <a href="">Github</a>
       <a href="">LinkedIn</a>
     </div>
-    <div>
+    <div class="footer-item">
       <h3>Mohammed</h3>
       <a href="">Github</a>
       <a href="">LinkedIn</a>
     </div>
-    <div>
+    <div class="footer-item">
       <h3>Yazid</h3>
       <a href="">Github</a>
       <a href="">LinkedIn</a>
@@ -47,6 +50,7 @@
   </footer>
 
   <!-- Only include the logout script if the user is logged in -->
+  <script src="/public/js/index.js"></script>
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}
