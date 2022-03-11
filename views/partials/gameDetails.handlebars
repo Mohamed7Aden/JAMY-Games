@@ -1,0 +1,38 @@
+<section class="game">
+  <div class="game-item">
+    <h2>{{gameDetails.title}}</h2>
+    <div class="game-item-thumbnail">
+  <img src="{{gameDetails.thumbnail}}" alt="{{gameDetails.short_description}}">
+    </div>
+  <div class="game-item-details">
+      <p>{{gameDetails.description}}</p>
+    <ul>
+        <li>Publisher: {{gameDetails.publisher}}</li>
+        <li>Developed By: {{gameDetails.developer}}</li>
+        <li>Platform: {{gameDetails.platform}}</li>
+        <li>Genre: {{gameDetails.genre}}</li>
+        <li>Release Date: {{gameDetails.release_date}}</li>
+        <li><button class="download_btn"><a href="{{gameDetails.game_url}}" class="download_btn_link">Download</a></button></li>
+        <li><button><i class="material-icons favBtn">favorite_outline</i></button></li>
+    </ul>
+    <ul>
+        <li>
+            <h3>
+                Minimum System Requirements
+            </h3>
+        </li>
+        <li>{{gameDetails.minimum_system_requirements.os}}</li>
+        <li>{{gameDetails.minimum_system_requirements.processor}}</li>
+        <li>{{gameDetails.minimum_system_requirements.memory}}</li>
+        <li>{{gameDetails.minimum_system_requirements.graphics}}</li>
+        <li>{{gameDetails.minimum_system_requirements.storage}}</li>
+    </ul>
+    <div class="carousel carousel-slider">
+    <a class="carousel-item material-boxed" href="#one!"><img src="{{gameDetails.screenshots.0.image}}"></a>
+    <a class="carousel-item material-boxed" href="#two!"><img src="{{gameDetails.screenshots.1.image}}"></a>
+    <a class="carousel-item material-boxed" href="#three!"><img src="{{gameDetails.screenshots.2.image}}"></a>
+    <a class="carousel-item material-boxed" href="#four!"><img src="{{gameDetails.screenshots.3.image}}"></a>
+  </div>
+  </div>
+  </div>
+</section>
