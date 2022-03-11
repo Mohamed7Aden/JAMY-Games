@@ -1,0 +1,32 @@
+const { Model, DataTypes } = require('sequelize');
+const bcrypt = require('bcrypt');
+const sequelize = require('../config/connection');
+
+class savedGames extends Model {
+
+};
+
+savedGames.init(
+    {
+        user_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: `User`,
+                key: `id`,
+                unique: true
+            }
+        },
+        game_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: `game_details`,
+                key: `id`,
+                unique: true
+            }
+        }
+    }
+);
+
+module.exports = savedGames;
