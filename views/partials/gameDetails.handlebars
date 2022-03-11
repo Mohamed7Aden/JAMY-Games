@@ -13,6 +13,7 @@
         <li>Genre: {{gameDetails.genre}}</li>
         <li>Release Date: {{gameDetails.release_date}}</li>
         <li><button class="download_btn"><a href="{{gameDetails.game_url}}" class="download_btn_link">Download</a></button></li>
+        <li><button><i class="material-icons favBtn">favorite_outline</i></button></li>
     </ul>
     <ul>
         <li>
@@ -26,12 +27,12 @@
         <li>{{gameDetails.minimum_system_requirements.graphics}}</li>
         <li>{{gameDetails.minimum_system_requirements.storage}}</li>
     </ul>
-    <ul>
-        <li><img src="{{gameDetails.screenshots.0.image}}" class="game_screenshot"></li>
-        <li><img src="{{gameDetails.screenshots.1.image}}" class="game_screenshot"></li>
-        <li><img src="{{gameDetails.screenshots.2.image}}" class="game_screenshot"></li>
-        <li><img src="{{gameDetails.screenshots.3.image}}" class="game_screenshot"></li>
-    </ul>
+    <div class="carousel carousel-slider">
+    <a class="carousel-item material-boxed" href="#one!"><img src="{{gameDetails.screenshots.0.image}}"></a>
+    <a class="carousel-item material-boxed" href="#two!"><img src="{{gameDetails.screenshots.1.image}}"></a>
+    <a class="carousel-item material-boxed" href="#three!"><img src="{{gameDetails.screenshots.2.image}}"></a>
+    <a class="carousel-item material-boxed" href="#four!"><img src="{{gameDetails.screenshots.3.image}}"></a>
+  </div>
   </div>
   </div>
 </section>
