@@ -4,33 +4,91 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TTTech Blog</title>
+  <title>JAMY Games</title>
   <link rel="stylesheet" href="/css/jass.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@materializecss/materialize@1.1.0-alpha/dist/css/materialize.min.css">
+  <link rel="stylesheet" href="/css/app.css">
 </head>
 
 <body>
-  <header class="display-flex justify-space-between align-center p-2">
-    <h1>
-      TTTech Blogs
-    </h1>
-    <!-- Only display the logout button if the user is logged in -->
-    {{#if logged_in}}
+  <header class="display-flex justify-space-between align-center p-2 navbar-fixed">
     <nav>
-      <button class="btn" id="logout">logout</button>
-    </nav>
-    {{/if}}
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo center">Logo</a>
+      <ul>
+        <li>
+          <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large left hide-on-med-and-down"><i class="material-icons">menu</i></a>
+        </li>
+      </ul>
+      <ul class="right hide-med-and-down">
+        <li>
+          <a href="#"><i class="material-icons">person_outline</i></a>
+        </li>
+        <li>
+          {{#if logged_in}}
+          <button>Logout</button>
+          {{else}}
+          <button>Log In</button>
+          {{/if}}
+        </li>
+      </ul>
+    </div>
+  </nav>
+  
+    <!-- Only display the logout button if the user is logged in -->
   </header>
+  <section>
+  <ul id="slide-out" class="sidenav">
+    <li><div class="">
+      <div class="background">
+      </div>
+      <a href="#user"></a>
+      <a href="#name"><span class="white-text name">John Doe</span></a>
+      <a href="#email"><span class="white-text email">jdoe@example.com</span></a>
+    </div></li>
+    <li><a href="#!">Home</a></li>
+    <li><a href="#!">User</a></li>
+    <li><div class="divider"></div></li>
+    <li><a class="subheader">Genres</a></li>
+    <li><a class="waves-effect" href="#!">RPG</a></li>
+  </ul>
+  </section>
+    
   <main class="container container-fluid mt-5">
     {{{ body }}}
   </main>
   <footer>
-      
+    <div class="footer-item">
+      <h3>Abdirahman</h3>
+      <a href="">Github</a>
+      <a href="">LinkedIn</a>
+    </div>
+    <div class="footer-item">
+      <h3>Jacob</h3>
+      <a href="">Github</a>
+      <a href="">LinkedIn</a>
+    </div>
+    <div class="footer-item">
+      <h3>Mohammed</h3>
+      <a href="">Github</a>
+      <a href="">LinkedIn</a>
+    </div>
+    <div class="footer-item">
+      <h3>Yazid</h3>
+      <a href="">Github</a>
+      <a href="">LinkedIn</a>
+    </div>
   </footer>
+ 
 
   <!-- Only include the logout script if the user is logged in -->
+  <script src="/public/js/index.js"></script>
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}
+  <script src="https://cdn.jsdelivr.net/npm/@materializecss/materialize@1.1.0-alpha/dist/js/materialize.min.js"></script>
+  <script src="./js/sidebar.js"></script>
 </body>
 
 </html>
