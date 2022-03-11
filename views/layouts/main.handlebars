@@ -15,36 +15,44 @@
     <nav>
     <div class="nav-wrapper">
       <a href="#" class="brand-logo center">Logo</a>
-      <ul id="nav-mobile" class="left hide-on-med-and-down">
-      <li><a href="#" data-target="slide-out"class="sidenav-trigger"><i class="material-icons">menu</i></a></li>
+      <ul>
+        <li>
+          <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large left hide-on-med-and-down"><i class="material-icons">menu</i></a>
+        </li>
       </ul>
-      <ul id="nav-module" class="right hide-on-med-and-down">
-        <li><a href="#"><i class="material-icons">person_outline</i></a></li>
-        {{#if logged_in}}
-        <li><button class="btn" id="logout">logout</button></li>
-        {{else}}
-        <li><button class="btn" id="login">log in</button></li>
-        {{/if}}
+      <ul class="right hide-med-and-down">
+        <li>
+          <a href="#"><i class="material-icons">person_outline</i></a>
+        </li>
+        <li>
+          {{#if logged_in}}
+          <button>Logout</button>
+          {{else}}
+          <button>Log In</button>
+          {{/if}}
+        </li>
       </ul>
     </div>
   </nav>
+  
+    <!-- Only display the logout button if the user is logged in -->
+  </header>
+  <section>
   <ul id="slide-out" class="sidenav">
-    <li><div class="user-view">
+    <li><div class="">
       <div class="background">
-        <img src="images/office.jpg">
       </div>
-      <a href="#user"><img class="circle" src="images/yuna.jpg"></a>
+      <a href="#user"></a>
       <a href="#name"><span class="white-text name">John Doe</span></a>
       <a href="#email"><span class="white-text email">jdoe@example.com</span></a>
     </div></li>
-    <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-    <li><a href="#!">Second Link</a></li>
+    <li><a href="#!">Home</a></li>
+    <li><a href="#!">User</a></li>
     <li><div class="divider"></div></li>
-    <li><a class="subheader">Subheader</a></li>
-    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+    <li><a class="subheader">Genres</a></li>
+    <li><a class="waves-effect" href="#!">RPG</a></li>
   </ul>
-    <!-- Only display the logout button if the user is logged in -->
-  </header>
+  </section>
     
   <main class="container container-fluid mt-5">
     {{{ body }}}
@@ -78,6 +86,7 @@
   <script src="/js/logout.js"></script>
   {{/if}}
   <script src="https://cdn.jsdelivr.net/npm/@materializecss/materialize@1.1.0-alpha/dist/js/materialize.min.js"></script>
+  <script src="./js/sidebar.js"></script>
 </body>
 
 </html>
