@@ -34,7 +34,7 @@ router.get('/game/:id', async (req, res) => {
     let oneGameDetails = {
       method: 'GET',
       url: 'https://free-to-play-games-database.p.rapidapi.com/api/game',
-      params: {id: `452`},
+      params: {id: req.params.id},
       headers: {
         'x-rapidapi-host': 'free-to-play-games-database.p.rapidapi.com',
         'x-rapidapi-key': '1a3958a999msh626d8d771ef20b0p1e89b7jsn52537a78b46c'

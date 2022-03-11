@@ -1,0 +1,37 @@
+<section class="game">
+  <div class="game-item">
+    <h2>{{gameDetails.title}}</h2>
+    <div class="game-item-thumbnail">
+  <img src="{{gameDetails.thumbnail}}" alt="{{gameDetails.short_description}}">
+    </div>
+  <div class="game-item-details">
+      <p>{{gameDetails.description}}</p>
+    <ul>
+        <li>Publisher: {{gameDetails.publisher}}</li>
+        <li>Developed By: {{gameDetails.developer}}</li>
+        <li>Platform: {{gameDetails.platform}}</li>
+        <li>Genre: {{gameDetails.genre}}</li>
+        <li>Release Date: {{gameDetails.release_date}}</li>
+        <li><button><a href="{{gameDetails.game_url}}">Download</a></button></li>
+    </ul>
+    <ul>
+        <li>
+            <h3>
+                Minimum System Requirements
+            </h3>
+        </li>
+        <li>{{gameDetails.minimum_system_requirements.os}}</li>
+        <li>{{gameDetails.minimum_system_requirements.processor}}</li>
+        <li>{{gameDetails.minimum_system_requirements.memory}}</li>
+        <li>{{gameDetails.minimum_system_requirements.graphics}}</li>
+        <li>{{gameDetails.minimum_system_requirements.storage}}</li>
+    </ul>
+    <ul>
+        <li><img src="{{gameDetails.screenshots.0.image}}"></li>
+        <li><img src="{{gameDetails.screenshots.1.image}}"></li>
+        <li><img src="{{gameDetails.screenshots.2.image}}"></li>
+        <li><img src="{{gameDetails.screenshots.3.image}}"></li>
+    </ul>
+  </div>
+  </div>
+</section>
