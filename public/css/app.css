@@ -77,11 +77,12 @@ header {
   min-height: calc(100vh - 70px);
   border-radius: 30px;
   backdrop-filter: var(--backdrop-filter-blur);
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto auto;
   justify-content: center;
   flex-wrap: wrap;
   padding: 20px;
-  margin: 0 10px;
+  margin-top: 10px;
 }
 
 .game-item {
