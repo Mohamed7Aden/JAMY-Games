@@ -1,12 +1,12 @@
 const router = require('express').Router();
-const { User, Game } = require('../models');
+const { User, Game, SavedGames } = require('../models');
 const withAuth = require('../utils/auth');
 
 
 // GET all games for dashboard
 router.get('/', async (req, res) => {
     try {
-      const dbGameData = await Game.findAll({
+      const dbGameData = await SavedGames.findAll({
         attributes: ['id', 'title', 'filename', 'description']
       });
   
@@ -27,7 +27,7 @@ router.get('/', async (req, res) => {
   // GET one game
 router.get('/game/:id', withAuth, async (req, res) => {
     try {
-      const dbGameData = await Game.findByPk(req.params.id);
+      const dbGameData = await SavedGames.findByPk(req.params.id);
   
       const game = dbGameData.get({ plain: true });
   
