@@ -9,12 +9,10 @@ router.post('/signup', async (req, res) => {
       username: req.body.username,
       password: req.body.password,
     });
-const userData = dbUserData.get ({
-  plain: true
-})
+
     req.session.save(() => {
       req.session.loggedIn = true;
-      req.session.user_id = userData.id;
+      req.session.user_id = dbUserData.id;
       res.status(200).json(dbUserData);
     });
   } catch (err) {

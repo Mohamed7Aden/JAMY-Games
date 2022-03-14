@@ -15,12 +15,12 @@ router.post ("/save" , async (req, res) => {
             }
           };
           axios.request(oneGameDetails).then( async function (response) {
-        console.log(req.session)
-            const NewSavedGameData = await Game_details.create({...response, game_id: req.body.game_id});
+        await Game_details.create({...response.data, game_id: req.body.game_id});
         const newRelationship = await SavedGames.create({
             user_id: req.session.user_id, 
-            game_id: req.body.game_id
-        })  
+            game_details_id: parseInt(req.body.game_id)
+        }, {fields: ["user_id", "game_details_id"]})  
+    res.json(newRelationship)
     })
     }
     catch (err) {

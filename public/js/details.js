@@ -17,3 +17,5 @@ async function favGames () {
 }
 
 saveGame.addEventListener('click', favGames);
+
+//Do we want them to be directed somewhere after saving a game? see line 13
