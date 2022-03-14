@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { User } = require('../../models');
 
 // CREATE new user
-router.post('/', async (req, res) => {
+router.post('/signup', async (req, res) => {
   try {
     const dbUserData = await User.create({
       email: req.body.email,
@@ -20,6 +20,20 @@ router.post('/', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+
+// post method for displaying username and email
+router.post('/signup', function(req, res){
+  //Grab the request body
+  let body = req.body;
+   
+  let res_body = {
+  username: body.username,
+  email: body.email
+  };
+   
+  res.render('layouts/main', res_body);
+  });
 
 router.post('/login', async (req, res) => {
   try {
