@@ -4,7 +4,13 @@ const router = Router();
 
 // post request that handles login using passport.authenticate function using the local strategy
 router.post('/login', passport.authenticate('local'), (req, res) => {
-    res.send(200);
+
+    req.session.save(() => {
+        req.session.user_id = userData.id;
+        req.session.loggedIn = true;
+        
+        res.json({ user: userData, message: 'You are now logged in!' });
+      });
 })
 
 module.exports = router;

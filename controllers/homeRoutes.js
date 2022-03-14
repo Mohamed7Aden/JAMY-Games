@@ -16,14 +16,22 @@ router.get('/', async (req, res) => {
         'x-rapidapi-key': '1a3958a999msh626d8d771ef20b0p1e89b7jsn52537a78b46c'
       }
     };
+    let serializedUser = {}
+   if(req.session.user_id){
+    const userData = await User.findByPk(req.session.user_id);
+     serializedUser = userData.get({plain: true});
+     console.log(serializedUser);
+  } 
     axios.request(allGameData).then(function (response) {
-      console.log(response.data);
+        
       res.render('homepage', {
-        games: response.data
+        games: response.data,
+        user: serializedUser,
+        loggedIn: req.session.loggedIn
       });
     }).catch(function (error) {
       console.error(error);
-    });
+    }); 
   } catch (err) {
     res.status(500).json(err);
   }

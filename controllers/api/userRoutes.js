@@ -11,6 +11,7 @@ router.post('/signup', async (req, res) => {
     });
 
     req.session.save(() => {
+      req.session.user_id = dbUserData.id;
       req.session.loggedIn = true;
 
       res.status(200).json(dbUserData);
@@ -21,19 +22,7 @@ router.post('/signup', async (req, res) => {
   }
 });
 
-
-// post method for displaying username and email
-router.post('/signup', function(req, res){
-  //Grab the request body
-  let body = req.body;
-   
-  let res_body = {
-  username: body.username,
-  email: body.email
-  };
-   
-  res.render('layouts/main', res_body);
-  });
+  
 
 router.post('/login', async (req, res) => {
   try {
@@ -60,7 +49,7 @@ router.post('/login', async (req, res) => {
     // Create session variables based on the logged in user
     req.session.save(() => {
       req.session.user_id = userData.id;
-      req.session.logged_in = true;
+      req.session.loggedIn = true;
       
       res.json({ user: userData, message: 'You are now logged in!' });
     });
@@ -71,7 +60,7 @@ router.post('/login', async (req, res) => {
 });
 
 router.post('/logout', (req, res) => {
-  if (req.session.logged_in) {
+  if (req.session.loggedIn) {
     // Remove the session variables
     req.session.destroy(() => {
       res.status(204).end();

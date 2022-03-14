@@ -298,3 +298,69 @@ nav button:hover {
   border: 1px solid var(--white-alpha-40); */
   text-align: center;
 }
+
+@media screen and (max-width: 600px) {
+  .game-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    margin: 30px 0;
+  }
+
+  .game-item {
+    padding: 0;
+  }
+  .game-item-thumbnail {
+    padding: 5px;
+  }
+
+  .carousel.carousel-slider .carousel-item {
+    background-color: var(--white-alpha-25);
+    border: 1px solid var(--white-alpha-40);
+    border-radius: 20px;
+    max-width: 300px;
+    min-height: 265px;
+    height: min-content;
+    width: min-content;
+    padding: 10px;
+  }
+
+  .carousel-item img {
+    min-width: 250px;
+    width: 200px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+  }
+
+  .footer h3 {
+    margin-bottom: 10px;
+  }
+
+  .footer-item-wrapper {
+    text-align: center;
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+  .footer-container {
+    width: 90%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .footer-img-left {
+    display: none;
+  }
+
+  .footer-img-center {
+    background: url(../assets/controller.jpg);
+    width: 100%;
+    min-height: fit-content;
+    border-radius: 8px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+  }
+  .footer-img-right {
+    display: none;
+  }
+}
