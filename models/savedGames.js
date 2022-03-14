@@ -5,6 +5,12 @@ class SavedGames extends Model {};
 
 SavedGames.init(
     {
+        game_detail_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+            autoIncrement: true
+        },
         user_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
@@ -14,7 +20,7 @@ SavedGames.init(
                 unique: false
             }
         },
-        game_id: {
+        game_details_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             references: {
