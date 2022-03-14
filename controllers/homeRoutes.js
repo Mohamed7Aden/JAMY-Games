@@ -13,34 +13,22 @@ router.get("/", async (req, res) => {
         "x-rapidapi-key": "1a3958a999msh626d8d771ef20b0p1e89b7jsn52537a78b46c",
       },
     };
-    axios
-      .request(allGameData)
-      .then(function (gameResponse) {
-        const popularGameData = {
-          method: "GET",
-          url: "https://free-to-play-games-database.p.rapidapi.com/api/games",
-          params: { "sort-by": "popularity" },
-          headers: {
-            "x-rapidapi-host": "free-to-play-games-database.p.rapidapi.com",
-            "x-rapidapi-key":
-              "1a3958a999msh626d8d771ef20b0p1e89b7jsn52537a78b46c",
-          },
-        };
-        axios
-          .request(popularGameData)
-          .then(function (response) {
-            res.render("homepage", {
-              games: gameResponse.data,
-              popGames: response.data,
-            });
-          })
-          .catch(function (error) {
-            console.error(error);
-          });
-      })
-      .catch(function (error) {
-        console.error(error);
+    let serializedUser = {}
+   if(req.session.user_id){
+    const userData = await User.findByPk(req.session.user_id);
+     serializedUser = userData.get({plain: true});
+     console.log(serializedUser);
+  } 
+    axios.request(allGameData).then(function (response) {
+        
+      res.render('homepage', {
+        games: response.data,
+        user: serializedUser,
+        loggedIn: req.session.loggedIn
       });
+    }).catch(function (error) {
+      console.error(error);
+    }); 
   } catch (err) {
     res.status(500).json(err);
   }

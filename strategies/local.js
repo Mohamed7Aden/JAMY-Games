@@ -5,13 +5,13 @@ const { User } = require('../models');
 
 // handles serialized user into a session(takes cookie and check to see which user it belongs to and take user and serialize it back into a session (this is how passport maintains a session)) 
 passport.serializeUser((user, done) => {
-    done(null, user.username);
+    done(null, user.email);
 });
 // handles deserializing a user into a session
 passport.deserializeUser(async(user, done) => {
     try {
 
-    const result = await User.findOne({ where: { username: user.username } });
+    const result = await User.findOne({ where: { email: user.email } });
     // checking to see if result is truthy
     if (result) {
         done(null, result);
@@ -24,10 +24,10 @@ passport.deserializeUser(async(user, done) => {
 // calling .use function and creating a new instance of LocalStrategy
 passport.use(new LocalStrategy(
     // username and password from req.body, done function that is gonna be invoked after we're done checking username and password
-    async(username, password, done) => {
+    async(email, password, done) => {
        try {
             // search database for record that matches username that was sent from client
-        const user = await User.findOne({ where: { username: username } });
+        const user = await User.findOne({ where: { email: email} });
        
         
         // result is going to be an array of arrays so check if it holds any values
