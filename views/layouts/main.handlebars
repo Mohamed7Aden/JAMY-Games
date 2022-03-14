@@ -26,13 +26,13 @@
           <a href="#"><i class="material-icons">person_outline</i></a>
         </li>
         <li>
-          {{#if logged_in}}
-          <button>Logout</button>
+          {{#if loggedIn}}
+          <button id="logout">Logout</button>
           {{else}}
           <a href="/login"><button>Log In</button></a>
+         <li><a href="/signup"><button>Sign Up</button></a></li>
           {{/if}}
         </li>
-        <li><a href="/signup"><button>Sign Up</button></a></li>
       </ul>
     </div>
   </nav>
@@ -44,9 +44,10 @@
     <li><div class="">
       <div class="background">
       </div>
-      <a href="#user"></a>
-      <a href="#name"><span class="white-text name">John Doe</span></a>
-      <a href="#email"><span class="white-text email">jdoe@example.com</span></a>
+      {{#if loggedIn}}
+      <a href="#name"><span class="white-text name">{{user.username}}</span></a>
+      <a href="#email"><span class="white-text email">{{user.email}}</span></a>
+      {{/if}}
     </div></li>
     <li class= "list-item"><a href="/">Home</a></li>
     <li class= "list-item"><a href="/dashboard">User</a></li>
@@ -99,7 +100,7 @@
 
   <!-- Only include the logout script if the user is logged in -->
   <script src="/public/js/index.js"></script>
-  {{#if logged_in}}
+  {{#if loggedIn}}
   <script src="/js/logout.js"></script>
   {{/if}}
   <script src="https://cdn.jsdelivr.net/npm/@materializecss/materialize@1.1.0-alpha/dist/js/materialize.min.js"></script>
