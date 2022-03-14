@@ -12,7 +12,7 @@ router.post('/signup', async (req, res) => {
 
     req.session.save(() => {
       req.session.loggedIn = true;
-
+      req.session.user_id = dbUserData.id;
       res.status(200).json(dbUserData);
     });
   } catch (err) {
@@ -21,19 +21,6 @@ router.post('/signup', async (req, res) => {
   }
 });
 
-
-// post method for displaying username and email
-router.post('/signup', function(req, res){
-  //Grab the request body
-  let body = req.body;
-   
-  let res_body = {
-  username: body.username,
-  email: body.email
-  };
-   
-  res.render('layouts/main', res_body);
-  });
 
 router.post('/login', async (req, res) => {
   try {

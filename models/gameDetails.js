@@ -5,7 +5,8 @@ class Game_details extends Model {};
 
 Game_details.init(
     {
-    game_id: {
+    id: {
+        primaryKey: true,
         type: DataTypes.INTEGER,
         allowNull: false
     },
