@@ -1,22 +1,20 @@
 const router = require('express').Router();
-const { User, Game, SavedGames } = require('../models');
+const { User, SavedGames, Game_details } = require('../models');
 const withAuth = require('../utils/auth');
 
 
 // GET all games for dashboard
-router.get('/', async (req, res) => {
-    try {
-      const dbGameData = await SavedGames.findAll({
-        attributes: ['id', 'title', 'filename', 'description']
+router.get('/', withAuth, async (req, res) => {
+  try {
+      let games = {};
+      const userGameData = await User.findByPk(req.session.user_id, {
+        include: [{model: Game_details, through: SavedGames, as: 'my_games'}]
       });
-  
-      const games = dbGameData.map((game) =>
-        game.get({ plain: true })
-      );
-  
-      res.render('homepage', {
-        games,
-        loggedIn: req.session.loggedIn
+      console.log(userGameData);
+       games = userGameData.get({plain:true});
+       console.log(games);
+      res.render("dashboard", {
+        userGames: games
       });
     } catch (err) {
       console.log(err);
