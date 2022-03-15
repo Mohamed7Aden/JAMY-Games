@@ -1,6 +1,6 @@
-<section class="game">
-  <div class="game-item">
     <h2>{{gameDetails.title}}</h2>
+<section class="game">
+  {{!-- <div class="game-item"> --}}
     <div class="game-item-thumbnail">
   <img src="{{gameDetails.thumbnail}}" alt="{{gameDetails.short_description}}">
     </div>
@@ -12,7 +12,7 @@
         <li>Platform: {{gameDetails.platform}}</li>
         <li>Genre: {{gameDetails.genre}}</li>
         <li>Release Date: {{gameDetails.release_date}}</li>
-        <li><button class="download_btn"><a href="{{gameDetails.game_url}}" class="download_btn_link">Download</a></button></li>
+        <li><button class="download_btn"><a target="_blank" href="{{gameDetails.game_url}}" class="download_btn_link">Download</a></button></li>
         <li><button><i class="material-icons favBtn">favorite_outline</i></button></li>
     </ul>
     <ul>
@@ -34,5 +34,5 @@
     <a class="carousel-item material-boxed" href="#four!"><img src="{{gameDetails.screenshots.3.image}}"></a>
     </div>
   </div>
-  </div>
+  {{!-- </div> --}}
 </section>

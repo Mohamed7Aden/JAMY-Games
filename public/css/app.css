@@ -163,6 +163,11 @@ nav button:hover {
   margin: 30px 0;
 }
 
+.carousel.carousel-slider .carousel-item {
+  min-height: 292px;
+  height: auto;
+}
+
 .game-item {
   width: 90%;
   padding: 10px;
@@ -300,18 +305,31 @@ nav button:hover {
 }
 
 @media screen and (max-width: 600px) {
+  nav .brand-logo.center {
+    display: none;
+  }
+
+  .navbar-fixed {
+    position: absolute;
+    bottom: 0;
+  }
   .game-container {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto;
     justify-content: center;
     margin: 30px 0;
   }
 
   .game-item {
+    display: grid;
     padding: 0;
   }
   .game-item-thumbnail {
     padding: 5px;
+  }
+  .game-item-details .carousel.carousel-slider .carousel-item {
+    min-height: 180px;
+    height: auto;
   }
 
   .carousel.carousel-slider .carousel-item {
@@ -352,13 +370,7 @@ nav button:hover {
   }
 
   .footer-img-center {
-    background: url(../assets/controller-img.jpg);
-    width: 100%;
-    min-height: fit-content;
-    border-radius: 8px;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
+    display: none;
   }
   .footer-img-right {
     display: none;
