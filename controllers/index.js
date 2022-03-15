@@ -7,7 +7,6 @@ const authRoutes = require('./auth')
 
 router.use('/', homeRoutes);
 router.use('/api', apiRoutes);
-// router.use('/auth', authRoutes)
-//router.use('/dashboard', dashboardRoutes);
+router.use('/dashboard', dashboardRoutes);
 
 module.exports = router;
